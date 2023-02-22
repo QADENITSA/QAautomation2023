@@ -27,9 +27,6 @@ public class ProfilePageShop extends BasePage {
     public WebElement cartBadge;
 
 
-    @FindBy(xpath = "//button[text()='Place Order']")
-    public WebElement placeOrder;
-
     public ProfilePageShop(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
@@ -47,20 +44,21 @@ public class ProfilePageShop extends BasePage {
 
     }
 
-    public String getItemsInTheCart() {
-        String c = null;
+    public int getItemsInTheCart() {
+       int count = 0;
+
         cartBadge.click();
-
+        
         WebElement t = driver.findElement(By.id("tbodyid"));
-
+        
         List<WebElement> rws = t.findElements(By.tagName("tr"));
         int rws_cnt = rws.size();
 
         for (int i = 0; i < rws_cnt; i++) {
             List<WebElement> cols = rws.get(i).findElements(By.tagName("td"));
-            c = cols.get(1).getText();
-            System.out.println("The cell value is: " + c);
-        }return c;
+            ++count;
+           // System.out.println("The cell value is: " + c);
+        }return count;
 
     }
 

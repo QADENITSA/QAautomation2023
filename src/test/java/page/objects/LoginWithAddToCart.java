@@ -1,6 +1,5 @@
 package page.objects;
 
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -10,10 +9,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class LoginPage extends BasePage {
-
-
-    @FindBy (id ="login2")
+public class LoginWithAddToCart extends BasePage{
+    @FindBy(id ="login2")
     public WebElement loginBtnInput;
 
     @FindBy (id ="loginusername")
@@ -28,9 +25,7 @@ public class LoginPage extends BasePage {
     public  WebElement logoutBtn;
 
 
-
-
-    public LoginPage(WebDriver driver){
+    public LoginWithAddToCart(WebDriver driver){
         super(driver);
         PageFactory.initElements(driver, this);
     }
@@ -52,8 +47,8 @@ public class LoginPage extends BasePage {
 
         WebDriverWait wait10 = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait10.until(ExpectedConditions.visibilityOf(logoutBtn));
-        logoutBtn.click();
+        //logoutBtn.click();
 
-       return new ProfilePageShop(driver);
+        return new ProfilePageShop(driver);
     }
 }
