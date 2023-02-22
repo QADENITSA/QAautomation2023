@@ -26,8 +26,6 @@ public class UnccessufulLoginPage extends BasePage {
     public WebElement loginBtn;
 
 
-
-
     public UnccessufulLoginPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
@@ -62,11 +60,6 @@ public class UnccessufulLoginPage extends BasePage {
 
         r.keyPress(KeyEvent.VK_ESCAPE);
 
-
-
-//        WebDriverWait wait10 = new WebDriverWait(driver, Duration.ofSeconds(10));
-//        wait10.until(ExpectedConditions.visibilityOf(loginBtn));
-//        loginBtn.click();
 
         return new ProfilePageShop(driver);
     }

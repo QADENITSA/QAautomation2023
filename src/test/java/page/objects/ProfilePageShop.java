@@ -45,21 +45,14 @@ public class ProfilePageShop extends BasePage {
     }
 
     public int getItemsInTheCart() {
-       int count = 0;
 
         cartBadge.click();
-        
-        WebElement t = driver.findElement(By.id("tbodyid"));
-        
-        List<WebElement> rws = t.findElements(By.tagName("tr"));
-        int rws_cnt = rws.size();
 
-        for (int i = 0; i < rws_cnt; i++) {
-            List<WebElement> cols = rws.get(i).findElements(By.tagName("td"));
-            ++count;
-           // System.out.println("The cell value is: " + c);
-        }return count;
+        //take element from table
+        List<WebElement> rows = driver.findElements(By.xpath("//table[@class='table table-bordered table-hover table-striped']/tbody/tr"));
+        return rows.size();
 
     }
 
 }
+
