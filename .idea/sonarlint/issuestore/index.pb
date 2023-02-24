@@ -7,10 +7,6 @@ P
  src/test/java/Base/TestUtil.java,1\a\1a2ae8a6b9dd4b8c6cb84a1fb212416dcf63a187
 X
 (src/test/java/resources/correctUsers.csv,c\6\c6f4491a39decc440cd4235d8e9bfe79de6cdf87
-V
-&src/test/java/resources/wrongUsers.csv,9\4\94024d82e98c9e10b9fe4f1aae2e08e3c6bedba4
-X
-(src/test/java/page/objects/BasePage.java,f\1\f1949a4912074f84b2a68a00267a6de670f86b44
 Y
 )src/test/java/page/objects/LoginPage.java,a\a\aa37dee5aff1faaeff39d5b3fa90b713589e788a
 b

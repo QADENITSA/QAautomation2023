@@ -43,6 +43,9 @@ public class UnccessufulLoginPage extends BasePage {
         passwordInput.clear();
         passwordInput.sendKeys(password);
 
+        WebDriverWait wait10 = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait10.until(ExpectedConditions.elementToBeClickable(loginBtn));
+
         loginBtn.click();
 
 
