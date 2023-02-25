@@ -32,7 +32,8 @@ public class UnccessufulLoginPage extends BasePage {
     }
 
     public ProfilePageShop login(String userName, String password) {
-
+        WebDriverWait wait7 = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait7.until(ExpectedConditions.visibilityOf(loginBtnInput));
         loginBtnInput.click();
 
         userNameInput.click();
@@ -48,7 +49,6 @@ public class UnccessufulLoginPage extends BasePage {
 
         loginBtn.click();
 
-
         Robot r = null;
         try {
             r = new Robot();
@@ -56,6 +56,9 @@ public class UnccessufulLoginPage extends BasePage {
             throw new RuntimeException(e);
         }
 
+        WebDriverWait wait12 = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait12.until(ExpectedConditions.alertIsPresent());
+        driver.switchTo().alert().accept();
 
         r.keyPress(KeyEvent.VK_ESCAPE);
 
