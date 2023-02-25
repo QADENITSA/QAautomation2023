@@ -37,6 +37,8 @@ public class LoginPage extends BasePage {
 
     public ProfilePageShop login (String userName, String password){
 
+        WebDriverWait wait10 = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait10.until(ExpectedConditions.visibilityOf(loginBtnInput));
         loginBtnInput.click();
 
         userNameInput.click();
@@ -50,8 +52,8 @@ public class LoginPage extends BasePage {
         loginBtn.click();
 
 
-        WebDriverWait wait10 = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait10.until(ExpectedConditions.visibilityOf(logoutBtn));
+        WebDriverWait wait11 = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait11.until(ExpectedConditions.visibilityOf(logoutBtn));
         logoutBtn.click();
 
        return new ProfilePageShop(driver);
