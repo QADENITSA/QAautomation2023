@@ -28,6 +28,8 @@ public class ProfilePageShop extends BasePage {
     @FindBy(id = "cartur")
     public WebElement cartBadge;
 
+    @FindBy(xpath = "//table[@class='table table-bordered table-hover table-striped']/tbody/tr")
+    public WebElement table;
 
     public ProfilePageShop(WebDriver driver) {
         super(driver);
@@ -50,9 +52,11 @@ public class ProfilePageShop extends BasePage {
 
         cartBadge.click();
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10)/*seconds*/);
-        WebElement element = wait.until(presenceOfElementLocated(By.xpath("//table[@class='table table-bordered table-hover table-striped']/tbody/tr")));
+        WebDriverWait wait10 = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait10.until(ExpectedConditions.visibilityOf(table));
 
+        WebDriverWait wait11 = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait11.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//table[@class='table table-bordered table-hover table-striped']/tbody/tr")));
         //take element from table
         List<WebElement> rows = driver.findElements(By.xpath("//table[@class='table table-bordered table-hover table-striped']/tbody/tr"));
         return rows.size();
