@@ -1,6 +1,6 @@
 package page.objects;
 
-import org.openqa.selenium.Keys;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -32,6 +32,7 @@ public class UnccessufulLoginPage extends BasePage {
     }
 
     public ProfilePageShop login(String userName, String password) {
+
         WebDriverWait wait7 = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait7.until(ExpectedConditions.visibilityOf(loginBtnInput));
         loginBtnInput.click();
