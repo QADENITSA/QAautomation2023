@@ -15,9 +15,8 @@ public class ShopItem extends TestUtil {
 
         prPage.addItemToTheCart("//a[text()='Samsung galaxy s6']");
         prPage.addItemToTheCart("//a[text()='Sony vaio i5']");
-      // System.out.println("test-"+prPage.getItemsInTheCart());
-       Assert.assertEquals( prPage.getItemsInTheCart(),2);
 
+        Assert.assertEquals(prPage.getItemsInTheCart(), 2);
 
     }
 }

@@ -12,6 +12,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.List;
 
+import static org.openqa.selenium.support.ui.ExpectedConditions.presenceOfElementLocated;
+
 public class ProfilePageShop extends BasePage {
 
     @FindBy(id = "cat")
@@ -47,6 +49,9 @@ public class ProfilePageShop extends BasePage {
     public int getItemsInTheCart() {
 
         cartBadge.click();
+
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10)/*seconds*/);
+        WebElement element = wait.until(presenceOfElementLocated(By.xpath("//table[@class='table table-bordered table-hover table-striped']/tbody/tr")));
 
         //take element from table
         List<WebElement> rows = driver.findElements(By.xpath("//table[@class='table table-bordered table-hover table-striped']/tbody/tr"));
